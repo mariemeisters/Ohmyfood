@@ -1,0 +1,21 @@
+
+@mixin typography-card-title {
+    font-family: "roboto", Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  @mixin typography-card-details { 
+    font-family: "roboto", Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: 17px;
+    font-weight: 300;
+  }
+
+  @mixin typography-btn {
+    font-family: "roboto", Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+  }

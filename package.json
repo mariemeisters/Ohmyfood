@@ -1,11 +1,19 @@
 {
   "name": "p3_ohmyfood",
   "version": "1.0.0",
-  "description": "",
+  "description": "Book the menu that suits you",
   "main": "index.js",
   "scripts": {
-    "sass":"sass --watch ./sass/main.scss:./css/style.css"
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "M_M",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariemeisters/Ohmyfood.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mariemeisters/Ohmyfood/issues"
+  },
+  "homepage": "https://github.com/mariemeisters/Ohmyfood#readme"
 }

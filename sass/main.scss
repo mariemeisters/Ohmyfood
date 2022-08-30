@@ -1,4 +1,201 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
-h1 {
-    color:black;
+@import "./base/typography";
+@import "./utils/variables" ;
+@import  "./utils/mixins";
+
+* {
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    display:flex;
+    justify-content: center;
+    padding: 20px 0px 15px 0px;
+    margin-bottom: 3px;
+    box-shadow: 0px 1px 5px #8d8d8d;
+        #header__logo {
+            width: 175px;
+        }
+}
+
+#localisation {
+    background-color: #eaeaea;
+    border: 0px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        .localisation__icon {
+        padding: 0px 15px 0px 15px;
+        }
+        >input {
+            border:none;
+            outline: none;
+            background-color: #eaeaea;
+            font-family: "roboto", Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            width: 140px;
+            }
+}
+
+::placeholder {
+    color: #000000;
+    opacity: 1; /* regle le prob de Firefox qui ajoute un opacité plus bas au placeholder*/
+}
+
+#explorer {
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 250px;
+    >h1 { 
+        font-family: "roboto", Arial, Helvetica, sans-serif;
+        font-size: 22px;
+        width: 70%;
+        margin: 35px 0 15px 0;
+    }
+    >p {
+        font-family: "roboto",Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        width: 80%;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+}
+
+#explorer__btn {
+    padding: 15px;
+    width: 170px;
+    border-radius: 32px;
+    box-shadow: 0px 5px 10px #d1d1d1;
+    background : -webkit-linear-gradient(270deg,$secondary-color,$color-primary);
+        >p {
+            @include typography-btn
+        }
+}
+
+#restaurant {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+    width: 100%;
+    margin: 0;
+    padding: 30px 0 45px 0;
+
+    .restaurant__card {
+        width: 90%;
+        height: 250px;
+        background-color: white;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0px 5px 10px #d1d1d1;
+    }
+        .restaurant__new {
+            position:absolute;
+            right: 0;
+            background-color: $tetiary-color;
+            z-index: 1;
+        }
+            .restaurant__img {
+                width: 100%;
+                height: 70%;
+                object-fit: cover;
+                border-radius: 20px 20px 0px 0px;
+            }             
+}
+
+.restaurant__cardfoot {
+    margin: 0 20px 0px 10px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    .restaurant__cardfoot__txt {
+    >h3 {
+        font-size: larger;
+        margin: 0 0 3px 0;
+        @include typography-card-title;
+    }
+    >p { 
+        font-size: 18px;
+        margin: 0 0 0 0;
+        @include typography-card-details;
+    }
+}
+}
+
+.restaurant__buttonfav {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 20px;
+    position: relative;
+    bottom: 30px;
+
+    .restaurant__buttonfav--full {
+        position: relative;
+        left: 32px;
+        bottom: 16px;
+        line-height: 100%; /*important pour la hauteur du gradient*/
+        background : -webkit-linear-gradient($color-primary, $secondary-color);
+        -webkit-background-clip : text;
+        -webkit-text-fill-color : transparent;
+    }
+}
+
+
+#footer {
+    background-color: #353535;
+    padding: 20px 0 20px 25px;
+    
+    .footer__title {
+        padding: 0 0 15px 0px;
+        font-family: "Shrikhand", Arial, Helvetica, sans-serif;
+        font-weight: 200;
+        font-size: 18px;
+        color: white;
+    }
+}
+
+.footer__contents {
+    padding: 0 0 0px 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "roboto", Arial, Helvetica, sans-serif;
+    .footer__element {
+        padding-bottom: 8px;
+        font-size: 15px;
+        :nth-child(n) {
+            color: white;
+        }   
+    }  
+}
+
+.footer__element__bold {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    >i { 
+        width: 25px;
+    }
+    >p {
+        font-weight: 500;
+        font-size: 15px;
+    }
+}
+
+.icon__rotate {
+    rotate: -15deg;
+    font-size: 12px;
 }

@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <title> Ohmyfood </title>
         <meta name=viewport content="width=device-width, initial-scale=1"> <!--contrôle la mise en page sur mobile-->
-        <link rel="stylesheet" href="css/prefixed/style.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="css/fontawesome-free-6.1.1-web/css/all.min.css"/>
     </head>
 
@@ -16,12 +16,14 @@
         </header>
         
         <main>
+
+            <form id="localisation" action="#" method="get">
+                <i class="fa-solid fa-location-dot localisation__icon"></i>
+                <input type="text" placeholder="Paris, Belleville">
+            </form>
+
             <section id="explorer">
-                <div class="explorer__location">
-                    <i class="fa-solid fa-location-dot explorer__icon"></i>
-                    <p>Paris, Belleville</p>
-                </div>
-                <h2>Réservez le menu qui vous convient</h2>
+                <h1>Réservez le menu qui vous convient</h1>
                 <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
                 <a id="explorer__btn" href="#">
                     <p>Explorer nos restaurants</p>
@@ -52,88 +54,104 @@
             <section id="restaurant">
                 <h2>Restaurants</h2>
                 <article class="restaurant__card">
-                    <a href="menu_pages/la_palette_du_gout.html"> <!--Dois-je ancrer l'intégralité de la carte?-->
-                        <aside class="restaurant__new">Nouveau</aside> <!--dans la balise <a> ce qui falicite la selection pour l'utilisateur-->
+                    <a href="menu_pages/la_palette_du_gout.html"> 
+                        <span class="restaurant__new">Nouveau</span> <!--dans la balise <a> ce qui falicite la selection pour l'utilisateur-->
                         <img class="restaurant__img" src="images/restaurants/palette_du_gout.jpg" alt="La palette du goût">
+                        <figure class="restaurant__cardfoot">
+                            <div class="restaurant__cardfoot__txt">
+                                <h3>La palette du goût</h3>
+                                <p>Ménilmontant</p>
+                            </div>
+                        </figure>
                     </a>
-                    <figure class="restaurant__cardfoot">
-                        <h3>La palette du goût</h3>
-                        <p>Ménilmontant</p>
-                        <i class="fa-regular fa-heart restaurant__fav"></i>
-                        <i class="fa-solid fa-heart restaurant__fav--full"></i>
-                    </figure>
+                    <aside class="restaurant__buttonfav">
+                        <i class="fa-regular fa-heart fa-2xl restaurant__buttonfav--empty"></i>
+                        <i class="fa-solid fa-heart fa-2xl restaurant__buttonfav--full"></i>
+                    </aside>
                 </article>
 
                 <article class="restaurant__card">
                     <a href="menu_pages/la_note_enchantee.html">
                         <aside class="restaurant__new">Nouveau</aside> 
                         <img class="restaurant__img" src="images/restaurants/note_enchantee.jpg" alt="La note enchantée">
+                        <figure class="restaurant__cardfoot">
+                            <div class="restaurant__cardfoot__txt">
+                                <h3>La note enchantée</h3>
+                                <p>Charonne</p>
+                            </div>
+                        </figure>
                     </a>
-                    <figure class="restaurant__cardfoot">
-                        <h3>La note enchantée</h3>
-                        <p>Charonne</p>
-                        <i class="fa-regular fa-heart restaurant__fav"></i>
-                        <i class="fa-solid fa-heart restaurant__fav--full"></i>
-                    </figure>
+                    <aside class="restaurant__buttonfav">
+                        <i class="fa-regular fa-heart fa-2xl restaurant__buttonfav--empty"></i>
+                        <i class="fa-solid fa-heart fa-2xl restaurant__buttonfav--full"></i>
+                    </aside>
                 </article>
 
                 <article class="restaurant__card">
                     <a href="menu_pages/a_la_francaise.html">
                         <aside class="restaurant__new">Nouveau</aside> 
                         <img class="restaurant__img" src="images/restaurants/a_la_francaise.jpg" alt="À la française">
-                    </a>
                     <figure class="restaurant__cardfoot">
-                        <h3>À la française</h3>
-                        <p>Cité Rouge</p>
-                        <i class="fa-regular fa-heart restaurant__fav"></i>
-                        <i class="fa-solid fa-heart restaurant__fav--full"></i>
+                        <div class="restaurant__cardfoot__txt">
+                            <h3>À la française</h3>
+                            <p>Cité Rouge</p>
+                        </div>
                     </figure>
+                    </a>
+                    <aside class="restaurant__buttonfav">
+                        <i class="fa-regular fa-heart fa-2xl restaurant__buttonfav--empty"></i>
+                        <i class="fa-solid fa-heart fa-2xl restaurant__buttonfav--full"></i>
+                    </aside>
                 </article>
 
                 <article class="restaurant__card">
                     <a href="menu_pages/le_delice_des_sens.html">
                         <aside class="restaurant__new">Nouveau</aside> 
                         <img class="restaurant__img" src="images/restaurants/delice_des_sens.jpg" alt="Le délice des sens">
+                        <figure class="restaurant__cardfoot">
+                            <div class="restaurant__cardfoot__txt">
+                                <h3>Le délice des sens</h3>
+                                <p>Folie-Méricourt</p>
+                            </div>
+                        </figure>
                     </a>
-                    <figure class="restaurant__cardfoot">
-                        <h3>Le délice des sens</h3>
-                        <p>Folie-Méricourt</p>
-                        <i class="fa-regular fa-heart restaurant__fav--empty"></i>
-                        <i class="fa-solid fa-heart restaurant__fav--full"></i>
-                    </figure>
+                    <aside class="restaurant__buttonfav">
+                        <i class="fa-regular fa-heart fa-2xl restaurant__buttonfav--empty"></i> <!-- with row-reverse, full is above-->
+                        <i class="fa-solid fa-heart fa-2xl restaurant__buttonfav--full"></i>
+                    </aside>
                 </article>
             </section>  
         </main>
 
-        <footer>
+        <footer id="footer">
             <h3 class="footer__title">ohmyfood</h3>
-            <ul class="footer__contents">
-                <li class="footer__element__bold">
-                    <a href="#">
-                    <i class="fa-solid fa-utensils footer__icon"></i>
-                    <p>Proposer un restaurant</p>
-                    </a>
-                </li>
-
-                <li class="footer__element__bold">
-                    <a href="#">
-                        <i class="fa-solid fa-handshake-angle footer__icon"></i>
-                        <p>Devenir Partenaire</p>
-                    </a>
-                </li>
-
-                <li class="footer__element">
-                    <a href="#">
-                       <p>Mentions légales</p> 
-                    </a>
-                </li>
-
-                <li class="footer__element">
-                        <a href="mailto:contact@ohmyfood.com">
-                            <p>Contact</p>
+                <ul class="footer__contents">
+                    <li class="footer__element">
+                        <a href="#" class="footer__element__bold">
+                            <i class="fa-solid fa-utensils"></i>
+                            <p>Proposer un restaurant</p>
                         </a>
-                </li>
-            </ul>
+                    </li>
+
+                    <li class="footer__element">
+                        <a href="#" class="footer__element__bold">
+                            <i class="fa-solid fa-handshake-angle icon__rotate"></i>
+                            <p>Devenir Partenaire</p>
+                        </a>
+                    </li>
+
+                    <li class="footer__element">
+                        <a href="#">
+                        <p>Mentions légales</p> 
+                        </a>
+                    </li>
+
+                    <li class="footer__element">
+                            <a href="mailto:contact@ohmyfood.com">
+                                <p>Contact</p>
+                            </a>
+                    </li>
+                </ul>
         </footer>
     </body>
 </html>   
