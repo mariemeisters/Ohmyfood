@@ -93,26 +93,17 @@ width: 100%;
         align-items: center;
         >.functioning__step{
            @include card-step;
-            .functioning__circle {
-                @include circle-step;
-            }
-            .functioning__icon {
-                padding: 0 10px 0 10px;
-                color: gray;
-                width: 30px;
-                font-size: larger;
-            }
-            >p {
-                font-weight: 600;
-                font-size: 16px;
+            }   
+        >#functioning__step__special { /*ID écrase propriété mixing*/
+            @include card-step;
+            background: rgba($color-primary,0.1);
+            >.functioning__icon {
+                color: $color-primary;
             }
         }
-        >#functioning__step__special {
-            @include card-step;
-            background-color: rgb($color-primary, .1);
         }
     }
-}
+
 
 
 
@@ -153,17 +144,17 @@ width: 100%;
     display: flex;
     align-items: center;
     .restaurant__cardfoot__txt {
-    >h3 {
-        font-size: larger;
-        margin: 0 0 3px 0;
-        @include typography-card-title;
+        >h3 {
+            font-size: larger;
+            margin: 0 0 3px 0;
+            @include typography-card-title;
+        }
+        >p { 
+            font-size: 18px;
+            margin: 0 0 0 0;
+            @include typography-card-details;
+        }
     }
-    >p { 
-        font-size: 18px;
-        margin: 0 0 0 0;
-        @include typography-card-details;
-    }
-}
 }
 
 .restaurant__buttonfav {

@@ -118,7 +118,7 @@ header #header__logo {
 }
 #functioning .functioning__block > .functioning__step .functioning__circle .functioning__number {
   position: relative;
-  left: 8px;
+  left: 7.5px;
   top: 3px;
 }
 #functioning .functioning__block > .functioning__step .functioning__icon {
@@ -131,7 +131,7 @@ header #header__logo {
   font-weight: 600;
   font-size: 16px;
 }
-#functioning .functioning__block > #functioning__step__special {
+#functioning .functioning__block > #functioning__step__special { /*ID écrase propriété mixing*/
   display: flex;
   align-items: center;
   padding: 25px 0 25px 0;
@@ -140,7 +140,35 @@ header #header__logo {
   border-radius: 25px;
   margin-bottom: 20px;
   width: 310px;
-  background-color: rgba(147, 86, 220, 0.1);
+  background: rgba(147, 86, 220, 0.1);
+}
+#functioning .functioning__block > #functioning__step__special .functioning__circle {
+  background-color: #9356DC;
+  font-size: smaller;
+  color: white;
+  height: 24px;
+  width: 24px;
+  border-radius: 12px;
+  position: relative;
+  right: 13px;
+}
+#functioning .functioning__block > #functioning__step__special .functioning__circle .functioning__number {
+  position: relative;
+  left: 7.5px;
+  top: 3px;
+}
+#functioning .functioning__block > #functioning__step__special .functioning__icon {
+  padding: 0 10px 0 10px;
+  color: gray;
+  width: 30px;
+  font-size: larger;
+}
+#functioning .functioning__block > #functioning__step__special > p {
+  font-weight: 600;
+  font-size: 16px;
+}
+#functioning .functioning__block > #functioning__step__special > .functioning__icon {
+  color: #9356DC;
 }
 
 #restaurant {
