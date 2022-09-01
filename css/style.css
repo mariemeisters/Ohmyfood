@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
 * {
   margin: 0;
+  font-family: "roboto", Arial, Helvetica, sans-serif;
 }
 
 li {
@@ -39,13 +40,11 @@ header #header__logo {
   border: none;
   outline: none;
   background-color: #eaeaea;
-  font-family: "roboto", Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: 16px;
   width: 140px;
 }
-
-::placeholder {
+#localisation ::placeholder {
   color: #000000;
   opacity: 1; /* regle le prob de Firefox qui ajoute un opacité plus bas au placeholder*/
 }
@@ -56,34 +55,92 @@ header #header__logo {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  height: 250px;
+  height: 275px;
 }
 #explorer > h1 {
-  font-family: "roboto", Arial, Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 24px;
   width: 70%;
-  margin: 35px 0 15px 0;
+  margin: 35px 0 12px 0;
 }
 #explorer > p {
-  font-family: "roboto", Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  width: 80%;
+  font-size: 18px;
+  width: 90%;
   font-weight: 300;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 #explorer__btn {
-  padding: 15px;
-  width: 170px;
+  padding: 16px;
+  width: 180px;
   border-radius: 32px;
   box-shadow: 0px 5px 10px #d1d1d1;
   background: -webkit-linear-gradient(270deg, #FF79DA, #9356DC);
-}
-#explorer__btn > p {
   font-family: "roboto", Arial, Helvetica, sans-serif;
   color: white;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 450;
+}
+
+#functioning {
+  height: 380px;
+  padding-left: 22px;
+  width: 100%;
+}
+#functioning > h2 {
+  margin: 50px 0 25px 0;
+}
+#functioning .functioning__block {
+  padding: 0;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#functioning .functioning__block > .functioning__step {
+  display: flex;
+  align-items: center;
+  padding: 25px 0 25px 0;
+  background-color: #f6f6f6;
+  box-shadow: 2px 5px 10px #D1D1D1;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  width: 310px;
+}
+#functioning .functioning__block > .functioning__step .functioning__circle {
+  background-color: #9356DC;
+  font-size: smaller;
+  color: white;
+  height: 24px;
+  width: 24px;
+  border-radius: 12px;
+  position: relative;
+  right: 13px;
+}
+#functioning .functioning__block > .functioning__step .functioning__circle .functioning__number {
+  position: relative;
+  left: 8px;
+  top: 3px;
+}
+#functioning .functioning__block > .functioning__step .functioning__icon {
+  padding: 0 10px 0 10px;
+  color: gray;
+  width: 30px;
+  font-size: larger;
+}
+#functioning .functioning__block > .functioning__step > p {
+  font-weight: 600;
+  font-size: 16px;
+}
+#functioning .functioning__block > #functioning__step__special {
+  display: flex;
+  align-items: center;
+  padding: 25px 0 25px 0;
+  background-color: #f6f6f6;
+  box-shadow: 2px 5px 10px #D1D1D1;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  width: 310px;
+  background-color: rgba(147, 86, 220, 0.1);
 }
 
 #restaurant {
@@ -150,6 +207,7 @@ header #header__logo {
   position: relative;
   left: 32px;
   bottom: 16px;
+  opacity: 100;
   line-height: 100%; /*important pour la hauteur du gradient*/
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
@@ -172,7 +230,6 @@ header #header__logo {
   padding: 0 0 0px 0;
   display: flex;
   flex-direction: column;
-  font-family: "roboto", Arial, Helvetica, sans-serif;
 }
 .footer__contents .footer__element {
   padding-bottom: 8px;

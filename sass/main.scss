@@ -5,6 +5,7 @@
 
 * {
     margin: 0;
+    font-family: "roboto", Arial, Helvetica, sans-serif;
 }
 
 li {
@@ -41,17 +42,17 @@ header {
             border:none;
             outline: none;
             background-color: #eaeaea;
-            font-family: "roboto", Arial, Helvetica, sans-serif;
             font-weight: 700;
             font-size: 16px;
             width: 140px;
             }
+            ::placeholder {
+                color: #000000;
+                opacity: 1; /* regle le prob de Firefox qui ajoute un opacité plus bas au placeholder*/
+            }
 }
 
-::placeholder {
-    color: #000000;
-    opacity: 1; /* regle le prob de Firefox qui ajoute un opacité plus bas au placeholder*/
-}
+
 
 #explorer {
     background-color: #f6f6f6;
@@ -59,32 +60,61 @@ header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    height: 250px;
+    height: 275px;
     >h1 { 
-        font-family: "roboto", Arial, Helvetica, sans-serif;
-        font-size: 22px;
+        font-size: 24px;
         width: 70%;
-        margin: 35px 0 15px 0;
+        margin: 35px 0 12px 0;
     }
     >p {
-        font-family: "roboto",Arial, Helvetica, sans-serif;
-        font-size: 16px;
-        width: 80%;
+        font-size: 18px;
+        width: 90%;
         font-weight: 300;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 }
 
 #explorer__btn {
-    padding: 15px;
-    width: 170px;
-    border-radius: 32px;
-    box-shadow: 0px 5px 10px #d1d1d1;
-    background : -webkit-linear-gradient(270deg,$secondary-color,$color-primary);
-        >p {
-            @include typography-btn
-        }
+    @include btn-theme  
 }
+
+#functioning {
+height: 380px;
+padding-left: 22px;
+width: 100%;
+    >h2 {
+        margin: 50px 0 25px 0;
+    }
+    .functioning__block {
+        padding: 0;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        >.functioning__step{
+           @include card-step;
+            .functioning__circle {
+                @include circle-step;
+            }
+            .functioning__icon {
+                padding: 0 10px 0 10px;
+                color: gray;
+                width: 30px;
+                font-size: larger;
+            }
+            >p {
+                font-weight: 600;
+                font-size: 16px;
+            }
+        }
+        >#functioning__step__special {
+            @include card-step;
+            background-color: rgb($color-primary, .1);
+        }
+    }
+}
+
+
 
 #restaurant {
     display:flex;
@@ -147,6 +177,7 @@ header {
         position: relative;
         left: 32px;
         bottom: 16px;
+        opacity:100;
         line-height: 100%; /*important pour la hauteur du gradient*/
         background : -webkit-linear-gradient($color-primary, $secondary-color);
         -webkit-background-clip : text;
@@ -172,7 +203,6 @@ header {
     padding: 0 0 0px 0;
     display: flex;
     flex-direction: column;
-    font-family: "roboto", Arial, Helvetica, sans-serif;
     .footer__element {
         padding-bottom: 8px;
         font-size: 15px;

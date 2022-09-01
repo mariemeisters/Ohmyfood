@@ -13,9 +13,42 @@
     font-weight: 300;
   }
 
-  @mixin typography-btn {
+  @mixin card-step {
+    display: flex;
+    align-items: center;
+    padding: 25px 0 25px 0;
+    background-color:#f6f6f6;
+    box-shadow: 2px 5px 10px #D1D1D1;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    width: 310px;
+  }
+
+  @mixin circle-step {
+    background-color: $color-primary;
+    font-size: smaller;
+    color: white;
+    height: 24px;
+    width: 24px;
+    border-radius: 12px;
+    position: relative;
+    right: 13px;
+    .functioning__number {
+        position: relative;
+        left: 8px;
+        top: 3px;
+    }
+}
+
+
+  @mixin btn-theme {
+    padding: 16px;
+    width: 180px;
+    border-radius: 32px;
+    box-shadow: 0px 5px 10px #d1d1d1;
+    background : -webkit-linear-gradient(270deg,$secondary-color,$color-primary);
     font-family: "roboto", Arial, Helvetica, sans-serif;
     color: white;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 450;
   }
