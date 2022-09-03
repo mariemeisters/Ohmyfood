@@ -83,15 +83,14 @@ header #header__logo {
 
 #functioning {
   height: 380px;
-  padding-left: 22px;
-  width: 100%;
+  margin: 20px;
 }
 #functioning > h2 {
-  margin: 50px 0 25px 0;
+  margin: 50px 0 30px 0;
 }
 #functioning .functioning__block {
   padding: 0;
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,12 +98,13 @@ header #header__logo {
 #functioning .functioning__block > .functioning__step {
   display: flex;
   align-items: center;
-  padding: 25px 0 25px 0;
+  padding: 24px 0 24px 0;
   background-color: #f6f6f6;
   box-shadow: 2px 5px 10px #D1D1D1;
   border-radius: 25px;
-  margin-bottom: 20px;
-  width: 310px;
+  margin-bottom: 25px;
+  width: 95%;
+  /*mixing*/
 }
 #functioning .functioning__block > .functioning__step .functioning__circle {
   background-color: #9356DC;
@@ -129,17 +129,17 @@ header #header__logo {
 }
 #functioning .functioning__block > .functioning__step > p {
   font-weight: 600;
-  font-size: 16px;
+  font-size: 17px;
 }
-#functioning .functioning__block > #functioning__step__special { /*ID écrase propriété mixing*/
+#functioning .functioning__block > #functioning__step__special { /*ID pour écraser propriétés mixing*/
   display: flex;
   align-items: center;
-  padding: 25px 0 25px 0;
+  padding: 24px 0 24px 0;
   background-color: #f6f6f6;
   box-shadow: 2px 5px 10px #D1D1D1;
   border-radius: 25px;
-  margin-bottom: 20px;
-  width: 310px;
+  margin-bottom: 25px;
+  width: 95%;
   background: rgba(147, 86, 220, 0.1);
 }
 #functioning .functioning__block > #functioning__step__special .functioning__circle {
@@ -165,7 +165,7 @@ header #header__logo {
 }
 #functioning .functioning__block > #functioning__step__special > p {
   font-weight: 600;
-  font-size: 16px;
+  font-size: 17px;
 }
 #functioning .functioning__block > #functioning__step__special > .functioning__icon {
   color: #9356DC;
@@ -179,6 +179,10 @@ header #header__logo {
   width: 100%;
   margin: 0;
   padding: 30px 0 45px 0;
+}
+#restaurant > h2 {
+  width: 90%;
+  margin: 25px 0 25px 0;
 }
 #restaurant .restaurant__card {
   width: 90%;
@@ -194,12 +198,13 @@ header #header__logo {
 #restaurant .restaurant__card > a .restaurant__new { /*Position absolute par rapport à <a> */
   background-color: #99E2D0;
   font-weight: 500;
-  padding: 7px;
   color: #008766;
+  padding: 7px 15px 7px 15px;
+  border-radius: 4px;
   position: absolute;
   z-index: 1;
-  right: 15px;
-  top: -150px;
+  right: 10px;
+  bottom: 200px;
 }
 #restaurant .restaurant__card > a .restaurant__img {
   width: 100%;
@@ -233,25 +238,49 @@ header #header__logo {
 
 .restaurant__buttonfav {
   display: flex;
-  flex-direction: row-reverse;
-  padding-right: 20px;
+  float: right;
+  padding: 20px 0 20px 10px; /*Attention, si changement padding, changement bottom / position relative*/
   position: relative;
-  bottom: 30px;
+  bottom: 65px;
+}
+.restaurant__buttonfav > i {
+  font-size: 30px;
+}
+.restaurant__buttonfav:hover .restaurant__buttonfav--full {
+  animation: anim-fav-full 1s cubic-bezier(0.45, 0.48, 0.7, 1.02) forwards;
+}
+.restaurant__buttonfav:hover .restaurant__buttonfav--empty {
+  animation: anim-fav-empty 1s forwards;
 }
 .restaurant__buttonfav .restaurant__buttonfav--full {
-  position: relative;
-  left: 32px;
-  bottom: 16px;
-  opacity: 100;
-  line-height: 100%; /*important pour la hauteur du gradient*/
+  opacity: 0;
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  position: relative;
+  right: 30px;
 }
 
+@keyframes anim-fav-full {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes anim-fav-empty {
+  50% {
+    color: #9356DC;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0%;
+  }
+}
 #footer {
   background-color: #353535;
-  padding: 20px 0 20px 25px;
+  padding: 20px 0 25px 25px;
 }
 #footer .footer__title {
   padding: 0 0 15px 0px;
@@ -269,6 +298,7 @@ header #header__logo {
 .footer__contents .footer__element {
   padding-bottom: 8px;
   font-size: 15px;
+  font-weight: 300;
 }
 .footer__contents .footer__element :nth-child(n) {
   color: white;
