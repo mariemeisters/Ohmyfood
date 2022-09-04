@@ -20,12 +20,22 @@ a {
 header {
     display:flex;
     justify-content: center;
-    padding: 20px 0px 15px 0px;
+    background-color: white;
     margin-bottom: 3px;
-    box-shadow: 0px 1px 5px #8d8d8d;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.692);
+    z-index: 2;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 75px;
         #header__logo {
             width: 175px;
         }
+}
+
+main {
+    margin-top: 75px;
 }
 
 #localisation {
@@ -51,8 +61,6 @@ header {
                 opacity: 1; /* regle le prob de Firefox qui ajoute un opacité plus bas au placeholder*/
             }
 }
-
-
 
 #explorer {
     background-color: #f6f6f6;
@@ -93,9 +101,9 @@ margin: 20px;
         >.functioning__step{
            @include card-step; /*mixing*/
             }   
-        >#functioning__step__special { /*ID pour écraser propriétés mixing*/
+        >.functioning__step__special { 
             @include card-step;
-            background: rgba($color-primary,0.1);
+            background: rgba($color-primary,0.1); /*dernier élément déclaré écrase les autres*/
             >.functioning__icon {
                 color: $color-primary;
             }
@@ -142,7 +150,7 @@ margin: 20px;
             border-radius: 20px 20px 0px 0px;
             }  
         }
-    }         
+    }    
 }
 
 .restaurant__cardfoot {
@@ -170,6 +178,14 @@ margin: 20px;
     padding: 20px 0 20px 10px;  /*Attention, si changement padding, changement bottom / position relative*/
     position: relative;
     bottom: 65px;
+    .restaurant__buttonfav--full {
+        opacity: 0;
+        background : -webkit-linear-gradient($color-primary, $secondary-color);
+        -webkit-background-clip : text;
+        -webkit-text-fill-color : transparent;
+        position: relative;
+        right: 30px;
+    }
     >i {
         font-size: 30px;
     }
@@ -182,14 +198,6 @@ margin: 20px;
         .restaurant__buttonfav--empty {
             animation: anim-fav-empty 1s forwards;
         }
-    }
-    .restaurant__buttonfav--full {
-        opacity: 0;
-        background : -webkit-linear-gradient($color-primary, $secondary-color);
-        -webkit-background-clip : text;
-        -webkit-text-fill-color : transparent;
-        position: relative;
-        right: 30px;
     }
 }
 
@@ -254,6 +262,29 @@ margin: 20px;
 }
 
 .icon__rotate {
-    rotate: -15deg;
+    transform : rotate(-15deg);
     font-size: 12px;
+}
+
+/*------- PAGES ANNEXE -------*/
+ #main__img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+ }
+
+#container__menu {
+    background-color: rgb(245, 245, 245);
+    width: 100%;
+    margin: 0;
+    padding: 30px 0 45px 0;
+}
+
+.menu__card {
+        width: 90%;
+        height: 80px;
+        background-color: white;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0px 5px 10px #d1d1d1;
 }
