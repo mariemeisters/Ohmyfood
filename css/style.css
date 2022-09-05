@@ -265,7 +265,7 @@ main {
   font-size: 30px;
 }
 .restaurant__buttonfav:hover .restaurant__buttonfav--full {
-  animation: anim-fav-full 1s cubic-bezier(0.45, 0.48, 0.7, 1.02) forwards;
+  animation: anim-fav-full 1s forwards;
 }
 .restaurant__buttonfav:hover .restaurant__buttonfav--empty {
   animation: anim-fav-empty 1s forwards;

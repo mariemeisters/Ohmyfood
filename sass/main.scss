@@ -99,10 +99,10 @@ margin: 20px;
         flex-direction: column;
         align-items: center;
         >.functioning__step{
-           @include card-step; /*mixing*/
+           @include card-functioning; /*mixing*/
             }   
         >.functioning__step__special { 
-            @include card-step;
+            @include card-functioning;
             background: rgba($color-primary,0.1); /*dernier élément déclaré écrase les autres*/
             >.functioning__icon {
                 color: $color-primary;
@@ -191,7 +191,7 @@ margin: 20px;
     }
     &:hover {
         .restaurant__buttonfav--full {
-            animation: anim-fav-full 1s cubic-bezier(.45,.48,.7,1.02) forwards;
+            animation: anim-fav-full 1s forwards;
         }
     }
     &:hover {
