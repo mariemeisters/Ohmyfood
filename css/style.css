@@ -68,11 +68,12 @@ main {
   align-items: center;
   text-align: center;
   height: 275px;
+  justify-content: center;
 }
 #explorer > h1 {
   font-size: 24px;
   width: 70%;
-  margin: 35px 0 12px 0;
+  margin-bottom: 12px;
 }
 #explorer > p {
   font-size: 18px;
@@ -97,8 +98,36 @@ main {
   height: 380px;
   margin: 20px;
 }
+@media screen and (min-width: 1024px) {
+  #functioning { /* RESPONSIVE*/
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  #functioning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
 #functioning > h2 {
   margin: 50px 0 30px 0;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  #functioning > h2 {
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #functioning > h2 {
+    margin: 0 0 10px 0;
+  }
 }
 #functioning .functioning__block {
   padding: 0;
@@ -106,6 +135,16 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media screen and (min-width: 1024px) {
+  #functioning .functioning__block { /* RESPONSIVE*/
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  #functioning .functioning__block {
+    max-width: 70%;
+  }
 }
 #functioning .functioning__block > .functioning__step {
   display: flex;
@@ -143,6 +182,13 @@ main {
   font-weight: 600;
   font-size: 17px;
 }
+@media screen and (min-width: 1024px) {
+  #functioning .functioning__block > .functioning__step {
+    /* RESPONSIVE*/
+    flex-direction: row;
+    margin: 20px;
+  }
+}
 #functioning .functioning__block > .functioning__step__special {
   display: flex;
   align-items: center;
@@ -179,6 +225,13 @@ main {
   font-weight: 600;
   font-size: 17px;
 }
+@media screen and (min-width: 1024px) {
+  #functioning .functioning__block > .functioning__step__special {
+    /* RESPONSIVE*/
+    flex-direction: row;
+    margin: 20px;
+  }
+}
 #functioning .functioning__block > .functioning__step__special > .functioning__icon {
   color: #9356DC;
 }
@@ -192,9 +245,30 @@ main {
   margin: 0;
   padding: 30px 0 45px 0;
 }
+@media screen and (min-width: 1024px) {
+  #restaurant { /* RESPONSIVE*/
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 #restaurant > h2 {
-  width: 90%;
-  margin: 25px 0 25px 0;
+  width: 100%;
+  margin: 25px 0 25px 40px;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  #restaurant > h2 {
+    width: auto;
+    margin: 25px 0 25px 0px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #restaurant > h2 { /* RESPONSIVE*/
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 25px 0 0px 0px;
+  }
 }
 #restaurant .restaurant__card {
   width: 90%;
@@ -203,6 +277,17 @@ main {
   border-radius: 20px;
   margin-bottom: 20px;
   box-shadow: 0px 5px 10px #d1d1d1;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  #restaurant .restaurant__card {
+    max-width: 70%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #restaurant .restaurant__card {
+    width: 40%;
+    margin: 30px;
+  }
 }
 #restaurant .restaurant__card > a {
   position: relative; /*Pour positionner "new" */
@@ -416,7 +501,8 @@ main {
 
 .menu__card {
   width: 100%;
-  height: 65px;
+  height: auto;
+  min-height: 65px;
   background-color: white;
   border-radius: 20px;
   margin-bottom: 20px;
