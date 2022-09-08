@@ -401,28 +401,68 @@ main {
 
 .menu__card {
         width: 100%;
-        height: auto;
-        min-height: 65px;
+        height: 65px;
         background-color: white;
-        border-radius: 20px;
+        border-radius: 15px;
         margin-bottom: 20px;
         box-shadow: 0px 5px 10px #d1d1d1;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        overflow: hidden; /*fixe la bordure pour qu'elle reste arrondie malgré le dépassement du contenu*/
         .menu__txt {
+            margin: 0 0 0 12px;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            white-space: nowrap; /*empêche le passage à la ligne en cas de débordement*/
+            overflow: hidden; /* cache ce qui déborde de toute la box*/
             >h3 {
                 @include typography-card-title;
                 margin-bottom: 3px;
+                overflow: hidden; /*cache le débordement*/
+                text-overflow: ellipsis; /*ajoute ... au contenu caché*/
             }
             >p {
-                @include typography-card-details;
+                @include typography-card-details; 
                 font-size: 15px;
+                overflow: hidden; /*cache le débordement*/
+                text-overflow: ellipsis; /*ajoute ... au contenu caché*/
             }
         }
-        >.menu__price {
+        .menu__price {
             font-weight: 800;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 20px 20px 20px;
         }
+        .menu__choice {
+            background-color: $tetiary-color;
+            color: white;
+            font-size: larger;
+            font-weight: 900;
+            height: 100%;
+            width: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: -60px;
+        }
+}
+
+.menu__card:hover .menu__choice { /*Animation checkbox*/
+    animation: menu__checkbox 1s ease forwards;
+}
+
+@keyframes menu__checkbox {
+    from {
+        margin-right: -60px;
+    }
+    to {
+        margin-right: 0px;
+    }
+    
 }
 
 .container__btn__order {

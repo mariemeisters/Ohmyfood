@@ -501,15 +501,23 @@ main {
 
 .menu__card {
   width: 100%;
-  height: auto;
-  min-height: 65px;
+  height: 65px;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 15px;
   margin-bottom: 20px;
   box-shadow: 0px 5px 10px #d1d1d1;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden; /*fixe la bordure pour qu'elle reste arrondie malgré le dépassement du contenu*/
+}
+.menu__card .menu__txt {
+  margin: 0 0 0 12px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  white-space: nowrap; /*empêche le passage à la ligne en cas de débordement*/
+  overflow: hidden; /* cache ce qui déborde de toute la box*/
 }
 .menu__card .menu__txt > h3 {
   font-family: "roboto", Arial, Helvetica, sans-serif;
@@ -517,6 +525,8 @@ main {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 3px;
+  overflow: hidden; /*cache le débordement*/
+  text-overflow: ellipsis; /*ajoute ... au contenu caché*/
 }
 .menu__card .menu__txt > p {
   font-family: "roboto", Arial, Helvetica, sans-serif;
@@ -524,11 +534,41 @@ main {
   font-size: 17px;
   font-weight: 300;
   font-size: 15px;
+  overflow: hidden; /*cache le débordement*/
+  text-overflow: ellipsis; /*ajoute ... au contenu caché*/
 }
-.menu__card > .menu__price {
+.menu__card .menu__price {
   font-weight: 800;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 20px 20px 20px;
+}
+.menu__card .menu__choice {
+  background-color: #99E2D0;
+  color: white;
+  font-size: larger;
+  font-weight: 900;
+  height: 100%;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: -60px;
 }
 
+.menu__card:hover .menu__choice { /*Animation checkbox*/
+  animation: menu__checkbox 1s ease forwards;
+}
+
+@keyframes menu__checkbox {
+  from {
+    margin-right: -60px;
+  }
+  to {
+    margin-right: 0px;
+  }
+}
 .container__btn__order {
   display: flex;
   justify-content: center;
