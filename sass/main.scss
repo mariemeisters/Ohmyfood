@@ -311,7 +311,7 @@ main {
     }
 }
 
-.icon__rotate {
+.footer__icon__rotate {
     transform : rotate(-15deg);
     font-size: 12px;
 }
@@ -455,6 +455,10 @@ main {
     animation: menu__checkbox 1s ease forwards;
 }
 
+.menu__card:hover .card__icon__check {
+    animation: menu-icon-rotate 1s ease forwards;
+}
+
 @keyframes menu__checkbox {
     from {
         margin-right: -60px;
@@ -462,7 +466,15 @@ main {
     to {
         margin-right: 0px;
     }
-    
+}
+
+@keyframes menu-icon-rotate {
+    from {
+        transform: rotateZ(0deg)
+    }
+    to {
+        transform: rotateZ(360deg)
+    }
 }
 
 .container__btn__order {
