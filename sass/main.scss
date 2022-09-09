@@ -32,7 +32,7 @@ header {
         #header__logo {
             width: 175px;
             position: relative;
-            top: 4px;
+            top: 2px;
         }
 }
 
@@ -86,7 +86,13 @@ main {
 }
 
 #explorer__btn {
-    @include btn-theme  
+    @include btn-theme
+}
+
+#explorer__btn:hover {
+    box-shadow: 0px 8px 8px #a3a3a3;
+    opacity: 0.8;
+    
 }
 
 #functioning {
@@ -399,7 +405,33 @@ main {
     } 
 }
 
-.menu__card {
+.menu__card__1 {
+    animation: slide-up-page 1500ms ease-in-out forwards 
+}
+.menu__card__2 {
+    animation: slide-up-page 3000ms ease-in-out forwards running 
+}
+.menu__card__3 {
+    animation: slide-up-page 4500ms ease-in-out forwards running 
+}
+.menu__card__4 {
+    animation: slide-up-page 6000ms ease-in-out forwards running 
+}
+
+@keyframes slide-up-page {
+    from {
+        opacity: 0;
+        margin-top: 15px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+
+
+.menu__card__1, .menu__card__2, .menu__card__3, .menu__card__4 {
         width: 100%;
         height: 65px;
         background-color: white;
@@ -451,7 +483,7 @@ main {
         }
 }
 
-.menu__card:hover .menu__choice { /*Animation checkbox*/
+.menu__card__1:hover .menu__choice, .menu__card__2:hover .menu__choice, .menu__card__3:hover .menu__choice, .menu__card__4:hover .menu__choice { /*Animation checkbox*/
     animation: menu__checkbox 1s ease forwards;
 }
 
@@ -464,7 +496,7 @@ main {
     }
 }
 
-.menu__card:hover .card__icon__check {
+.menu__card__1:hover .card__icon__check, .menu__card__2:hover .card__icon__check, .menu__card__3:hover .card__icon__check, .menu__card__4:hover .card__icon__check {
     animation: menu-icon-rotate 1s ease forwards;
 }
 
@@ -483,5 +515,5 @@ main {
     .btn__order {
         @include btn-theme;
         border: none;
-}
+    }
 }

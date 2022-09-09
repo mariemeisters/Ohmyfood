@@ -63,5 +63,9 @@
   color: white;
   font-size: 15px;
   font-weight: 450;
+    &:hover {
+      box-shadow: 0px 8px 8px #a3a3a3;
+      opacity: 0.8;
+    }
 }
 
