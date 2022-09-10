@@ -55,17 +55,20 @@
 
 @mixin btn-theme {
   padding: 16px;
-  width: 180px;
+  width: auto;
+  min-width: 180px;
+  border: none;
   border-radius: 32px;
   box-shadow: 0px 5px 10px #d1d1d1;
-  background : -webkit-linear-gradient(270deg,$secondary-color,$color-primary);
+  background : -webkit-linear-gradient(280deg,$secondary-color,$color-primary);
   font-family: "roboto", Arial, Helvetica, sans-serif;
   color: white;
   font-size: 15px;
-  font-weight: 450;
-    &:hover {
+  font-weight: 400;
+      &:hover {
       box-shadow: 0px 8px 8px #a3a3a3;
       opacity: 0.8;
     }
 }
+
 

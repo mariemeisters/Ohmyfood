@@ -6,6 +6,7 @@
 * {
     margin: 0;
     font-family: "roboto", Arial, Helvetica, sans-serif;
+    z-index: 0;
 }
 
 li {
@@ -17,13 +18,79 @@ a {
     color: black;
 }
 
+#container__loader {
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    background: $tetiary-color;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: loading-container-animation 4s forwards;
+    pointer-events: none; /*retire toute interaction au clique*/
+    .dot {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0;
+               
+    }
+    .dot1 {
+        background : -webkit-linear-gradient(10deg,$secondary-color,$color-primary);
+        animation: loading-dot-animation 1.5s infinite;
+    }
+    .dot2 {
+                background : -webkit-linear-gradient(10deg,$secondary-color,$color-primary);
+        margin: 0 10px 0 10px;
+        animation: loading-dot-animation 1.5s infinite;
+        animation-delay: 250ms;
+    }
+    .dot3 {
+        background : -webkit-linear-gradient(10deg,$secondary-color,$color-primary);
+        animation: loading-dot-animation 1.5s infinite;
+        animation-delay: 500ms;
+    }
+}
+
+@keyframes loading-dot-animation {
+    0% {
+        opacity: 0;
+        transform: scale(0.2) translate(0px, 50px) ;
+    }
+    25% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+@keyframes loading-container-animation {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
 header {
     display:flex;
     justify-content: center;
     background-color: white;
     margin-bottom: 3px;
     box-shadow: 0px 1px 5px rgba(107, 107, 107, 0.692);
-    z-index: 2;
+    z-index: 3;
     position: fixed;
     top:0;
     left: 0;
@@ -114,10 +181,13 @@ main {
     }
     >h2 {
         margin: 50px 0 30px 0;
+        width: 90%;
         @media screen and (min-width:768px) and (max-width:1023px) {
+            width: auto;
             margin-top: 0;
         }
         @media screen and (min-width: 1024px) {
+            width: auto;
             margin: 0 0 10px 0;
         }
     }
@@ -160,8 +230,8 @@ main {
         justify-content: center;
         }
     >h2 {
-        width: 100%;
-        margin: 25px 0 25px 40px;
+        width: 90%;
+        padding: 25px 0 25px 0;
         @media screen and (min-width:768px) and (max-width:1023px) {
             width: auto;
             margin: 25px 0 25px 0px;
@@ -259,20 +329,22 @@ main {
 
 @keyframes anim-fav-full {
     0% {
-        opacity: 0%;
+        opacity: 0;
     }
     100% {
-        opacity: 100%;
+        opacity: 1;
     }
 }
 
 @keyframes anim-fav-empty {
     50% {
         color: $color-primary;
+        transform: scale(1.2);
+        
     }
     100% {
-        transform: scale(1.2);
-        opacity: 0%;
+        opacity: 0;
+        transform: scale(1);
     }
 }
 
@@ -333,17 +405,25 @@ main {
     align-items: center;
 }
 
- #main__img {
+#main__img {
     width: 100%;
-    height: 250px;
+    height: 265px;
     object-fit: cover;
+    @media screen and (min-width: 1024px) { /* RESPONSIVE*/
+        height: 400px;  
+    }
  }
 
 #container__menu {
     background-color: rgb(245, 245, 245);
     width: 100%;
     margin: 0;
-    padding: 10px 0 45px 0;
+    padding: 10px 0 10px 0;
+    @media screen and (min-width: 1024px) { /* RESPONSIVE*/
+        display: flex;
+        justify-content: space-around;
+    }
+    
 }
 
 .menu__restaurant {
@@ -354,7 +434,10 @@ main {
     border-top-right-radius: 30px;
     display: flex;
     justify-content: space-between;
-    padding: 30px 20px 0 20px;
+    padding: 30px 20px 10px 20px;
+    @media screen and (min-width: 1024px) { /* RESPONSIVE*/
+        justify-content:center;    
+    }
     >h1 {
         padding: 0 0 15px 0px;
         font-family: "Shrikhand", Arial, Helvetica, sans-serif;
@@ -366,19 +449,22 @@ main {
 .menu__buttonfav {
     display: flex;
     float: right;
+    height: 28px;
     position: relative;
     top: 8px;
+    @media screen and (min-width: 1024px) { /* RESPONSIVE*/
+        padding-left:40px;   
+    }
     >.menu__fav--full {
         opacity: 0;
         background : -webkit-linear-gradient($color-primary, $secondary-color);
         -webkit-background-clip : text;
         -webkit-text-fill-color : transparent;
         position: relative;
-        right: 24px;
     }
     >i {
         font-size: 24px;
-    }
+         }
     &:hover {
         .menu__fav--full {
             animation: anim-fav-full 1s forwards;
@@ -402,7 +488,10 @@ main {
         height: 3px;
         width: 40px;
         margin: 2px 0 15px 0;
-    } 
+    }
+    @media screen and (min-width: 1024px) { /* RESPONSIVE*/
+        width: 30%;
+    }
 }
 
 .menu__card__1 {
@@ -512,8 +601,9 @@ main {
 .container__btn__order {
     display: flex;
     justify-content: center;
+    padding-bottom: 70px;
+    background-color:#f6f6f6;
     .btn__order {
         @include btn-theme;
-        border: none;
     }
 }
