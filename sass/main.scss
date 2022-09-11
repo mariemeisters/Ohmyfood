@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
-@import "./base/typography";
 @import "./utils/variables" ;
 @import  "./utils/mixins";
 
@@ -39,17 +38,17 @@ a {
                
     }
     .dot1 {
-        background : -webkit-linear-gradient(10deg,$secondary-color,$color-primary);
+        background : -webkit-linear-gradient(10deg,$secondary-color,$primary-color);
         animation: loading-dot-animation 1.5s infinite;
     }
     .dot2 {
-                background : -webkit-linear-gradient(10deg,$secondary-color,$color-primary);
+                background : -webkit-linear-gradient(10deg,$secondary-color,$primary-color);
         margin: 0 10px 0 10px;
         animation: loading-dot-animation 1.5s infinite;
         animation-delay: 250ms;
     }
     .dot3 {
-        background : -webkit-linear-gradient(10deg,$secondary-color,$color-primary);
+        background : -webkit-linear-gradient(10deg,$secondary-color,$primary-color);
         animation: loading-dot-animation 1.5s infinite;
         animation-delay: 500ms;
     }
@@ -208,9 +207,9 @@ main {
             }   
         >.functioning__step__special { 
             @include card-functioning;
-            background: rgba($color-primary,0.1); /*dernier élément déclaré écrase les autres*/
+            background: rgba($primary-color,0.1); /*dernier élément déclaré écrase les autres*/
             >.functioning__icon {
-                color: $color-primary;
+                color: $primary-color;
             }
         }
     }
@@ -308,7 +307,7 @@ main {
     bottom: 65px;
     .restaurant__buttonfav--full {
         opacity: 0;
-        background : -webkit-linear-gradient($color-primary, $secondary-color);
+        background : -webkit-linear-gradient($primary-color, $secondary-color);
         -webkit-background-clip : text;
         -webkit-text-fill-color : transparent;
         position: relative;
@@ -338,7 +337,7 @@ main {
 
 @keyframes anim-fav-empty {
     50% {
-        color: $color-primary;
+        color: $primary-color;
         transform: scale(1.2);
         
     }
@@ -457,7 +456,7 @@ main {
     }
     >.menu__fav--full {
         opacity: 0;
-        background : -webkit-linear-gradient($color-primary, $secondary-color);
+        background : -webkit-linear-gradient($primary-color, $secondary-color);
         -webkit-background-clip : text;
         -webkit-text-fill-color : transparent;
         position: relative;
