@@ -341,7 +341,7 @@ main {
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   #restaurant > h2 {
     width: auto;
-    margin: 25px 0 25px 0px;
+    margin: 0;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -363,6 +363,7 @@ main {
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   #restaurant .restaurant__card {
     max-width: 70%;
+    margin-bottom: 35px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -414,7 +415,7 @@ main {
   margin: 0 0 3px 0;
   font-family: "roboto", Arial, Helvetica, sans-serif;
   color: black;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
 }
 .restaurant__cardfoot .restaurant__cardfoot__txt > p {
@@ -693,7 +694,7 @@ main {
 .menu__card__1 .menu__txt > h3, .menu__card__2 .menu__txt > h3, .menu__card__3 .menu__txt > h3, .menu__card__4 .menu__txt > h3 {
   font-family: "roboto", Arial, Helvetica, sans-serif;
   color: black;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   margin-bottom: 3px;
   overflow: hidden; /*cache le débordement*/
