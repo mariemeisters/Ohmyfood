@@ -236,6 +236,12 @@ main {
   margin-bottom: 25px;
   width: 95%;
   /*mixing*/
+  /*  &:hover {  
+    background: rgba($primary-color,0.1);
+        >i {
+            color: $primary-color;
+        }
+    }*/ /* FACULTATIF */
 }
 #functioning .functioning__block > .functioning__step .functioning__circle {
   background-color: #9356DC;

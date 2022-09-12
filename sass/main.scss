@@ -204,8 +204,14 @@ main {
             max-width: 70%;
         }
         >.functioning__step{
-           @include card-functioning; /*mixing*/
-            }   
+            @include card-functioning; /*mixing*/
+          /*  &:hover {  
+            background: rgba($primary-color,0.1);
+                >i {
+                    color: $primary-color;
+                }
+            }*/ /* FACULTATIF */
+        }
         >.functioning__step__special { 
             @include card-functioning;
             background: rgba($primary-color,0.1); /*dernier élément déclaré écrase les autres*/
