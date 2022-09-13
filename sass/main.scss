@@ -341,14 +341,14 @@ main {
             background: linear-gradient($primary-color 0%, $secondary-color 100%);
             -webkit-background-clip : text; /*accroche le background au text (icone)*/
             -webkit-text-fill-color : transparent; /* rend le coeur transparent*/
-            animation: anim-fav-full 1s forwards ease-in-out;            
+            animation: anim-fav-full 1s forwards ease-in-out;      
 }
       
 
 
 .restaurant__buttonfav input[type="checkbox"]:checked ~ /*combinateur frère*/ .restaurant__buttonfav--empty {
              position:absolute;
-             animation: anim-fav-empty 1.5s forwards;
+             animation: anim-fav-empty 1.2s forwards;
             }
 
     
@@ -555,16 +555,16 @@ main {
 }
 
 .menu__card__1 {
-    animation: slide-up-page 1000ms ease-in-out forwards 
+    animation: slide-up-page 1000ms ease-in-out forwards; 
 }
 .menu__card__2 {
-    animation: slide-up-page 1500ms ease-in-out forwards running 
+    animation: slide-up-page 1500ms ease-in-out forwards;  
 }
 .menu__card__3 {
-    animation: slide-up-page 2000ms ease-in-out forwards running 
+    animation: slide-up-page 2000ms ease-in-out forwards;
 }
 .menu__card__4 {
-    animation: slide-up-page 2500ms ease-in-out forwards running 
+    animation: slide-up-page 2500ms ease-in-out forwards;
 }
 
 @keyframes slide-up-page {

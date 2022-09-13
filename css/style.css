@@ -771,7 +771,7 @@ main {
 
 .restaurant__buttonfav input[type=checkbox]:checked ~ .restaurant__buttonfav--empty {
   position: absolute;
-  animation: anim-fav-empty 1.5s forwards;
+  animation: anim-fav-empty 1.2s forwards;
 }
 
 @keyframes anim-fav-full {
@@ -989,15 +989,15 @@ main {
 }
 
 .menu__card__2 {
-  animation: slide-up-page 1500ms ease-in-out forwards running;
+  animation: slide-up-page 1500ms ease-in-out forwards;
 }
 
 .menu__card__3 {
-  animation: slide-up-page 2000ms ease-in-out forwards running;
+  animation: slide-up-page 2000ms ease-in-out forwards;
 }
 
 .menu__card__4 {
-  animation: slide-up-page 2500ms ease-in-out forwards running;
+  animation: slide-up-page 2500ms ease-in-out forwards;
 }
 
 @keyframes slide-up-page {
