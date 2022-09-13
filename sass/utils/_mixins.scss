@@ -73,4 +73,14 @@
     }
 }
 
+@mixin media-queries-desktop {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
 
+@mixin media-queries-tablet {
+  @media screen and (min-width:768px) and (max-width:1023px) {
+    @content;
+  }
+}

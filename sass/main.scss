@@ -1,9 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
-@import "./utils/variables" ;
-@import  "./utils/mixins";
-@import "./utils/extensions";
-@import "./utils/functions";
-@import "./base/reset";
+@import "./utils/variables","./utils/mixins","./utils/extensions","./utils/functions";
+@import "./base/reset", "./base/base", "./base/typography";
+@import "./components/buttons";
+@import "./layout/container", "./layout/form", "./layout/header", "./layout/nav";
+@import "./pages/about", "./pages/project", "./pages/work";
+
+
 
 * {
     margin: 0;
@@ -45,7 +46,7 @@ a {
         animation: loading-dot-animation 1.5s infinite;
     }
     .dot2 {
-                background : -webkit-linear-gradient(10deg,$secondary-color,$primary-color);
+        background : -webkit-linear-gradient(10deg,$secondary-color,$primary-color);
         margin: 0 10px 0 10px;
         animation: loading-dot-animation 1.5s infinite;
         animation-delay: 250ms;
@@ -167,14 +168,14 @@ main {
 #functioning {
     height: 380px;
     margin: 20px;
-     @media screen and (min-width:768px) and (max-width:1023px) {
+     @include media-queries-tablet {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         margin-bottom: 20px;
     }
-    @media screen and (min-width: 1024px) { /* RESPONSIVE*/
+   @include media-queries-desktop { 
         height: 200px;
         display: flex;
         flex-direction: column;
@@ -184,11 +185,11 @@ main {
        >h2 {
         margin: 50px 0 30px 0;
         width: 90%;
-        @media screen and (min-width:768px) and (max-width:1023px) {
+        @include media-queries-tablet {
             width: auto;
             margin-top: 0;
         }
-        @media screen and (min-width: 1024px) {
+        @include media-queries-desktop {
             width: auto;
             margin: 0 0 10px 0;
         }
@@ -199,11 +200,11 @@ main {
         display: flex;
         flex-direction: column;
         align-items: center;
-        @media screen and (min-width: 1024px) { /* RESPONSIVE*/
+        @include media-queries-desktop { /* RESPONSIVE*/
             flex-direction: row;
             justify-content: center;
         }
-        @media screen and (min-width:768px) and (max-width:1023px) {
+        @include media-queries-tablet {
             max-width: 70%;
         }
         >.functioning__step{
@@ -235,7 +236,7 @@ main {
     width: 100%;
     margin: 0;
     padding: 30px 0 45px 0;
-    @media screen and (min-width: 1024px) { /* RESPONSIVE*/
+    @include media-queries-desktop { /* RESPONSIVE*/
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
@@ -243,11 +244,11 @@ main {
     >h2 {
         width: 90%;
         padding: 25px 0 25px 0;
-        @media screen and (min-width:768px) and (max-width:1023px) {
+        @include media-queries-tablet {
             width: auto;
             margin: 0;
         }
-        @media screen and (min-width: 1024px) { /* RESPONSIVE*/
+        @include media-queries-desktop { /* RESPONSIVE*/
             width: 100%;
             display: flex;
             justify-content: center;
@@ -262,11 +263,11 @@ main {
         margin-bottom: 20px;
         box-shadow: 0px 5px 10px #d1d1d1;
         position: relative;
-        @media screen and (min-width:768px) and (max-width:1023px) {
+        @include media-queries-tablet {
             max-width: 70%;
             margin-bottom: 35px;
         }
-        @media screen and (min-width: 1024px) {
+        @include media-queries-desktop {
             width: 35%;
             margin: 30px;
             height: 350px;
@@ -282,7 +283,7 @@ main {
             z-index: 1;
             right: 15px;
             bottom: 200px;
-            @media screen and (min-width: 1024px) {
+            @include media-queries-desktop {
                 bottom:300px;  /*position absolute*/
             }
         }
@@ -291,7 +292,7 @@ main {
             height: 70%;
             object-fit: cover;
             border-radius: 20px 20px 0px 0px;
-            @media screen and (min-width: 1024px) {
+            @include media-queries-desktop {
                 height: 80%;
             }
             } 
@@ -447,10 +448,10 @@ main {
     width: 100%;
     height: 265px;
     object-fit: cover;
-    @media screen and (min-width: 1024px) { /* RESPONSIVE*/
+    @include media-queries-desktop { /* RESPONSIVE*/
         height: 400px;  
     }
-    @media screen and (min-width:768px) and (max-width:1023px) {
+    @include media-queries-tablet {
        height: 350px;
     }
  }
@@ -460,11 +461,11 @@ main {
     width: 100%;
     margin: 0;
     padding: 10px 0 10px 0;
-    @media screen and (min-width: 1024px) { /* RESPONSIVE*/
+    @include media-queries-desktop { /* RESPONSIVE*/
         display: flex;
         justify-content: space-around;
     }
-    @media screen and (min-width:768px) and (max-width:1023px) {
+    @include media-queries-tablet {
        display:flex;
        flex-direction: column;
        justify-content: center;
@@ -482,10 +483,10 @@ main {
     display: flex;
     justify-content: space-between;
     padding: 30px 20px 10px 20px;
-    @media screen and (min-width: 1024px) { /* RESPONSIVE*/
+    @include media-queries-desktop { /* RESPONSIVE*/
         justify-content:center;   
     }
-    @media screen and (min-width:768px) and (max-width:1023px) {
+    @include media-queries-tablet {
         padding-left: 10%;
         padding-right: 10%;
      }
@@ -493,14 +494,14 @@ main {
     >h1 {
         font-family: "Shrikhand", Arial, Helvetica, sans-serif;
         font-weight: 200;
-        font-size: 28px;
+        font-size: 26px;
     }
 }
 
 .menu__buttonfav {
     position: relative;
-    top: 20px;
     display: flex;
+    padding-left: 10px; /*empêche la déconstruction sur très petit écran*/
     right: 10px;
     top: 13px;
     cursor: pointer;
@@ -511,7 +512,7 @@ main {
         font-size: 30px;
         padding: 5px; /*permet un clic plus large et règle un probleme d'affichage*/
     }
-    @media screen and (min-width: 1024px) { /* RESPONSIVE*/
+    @include media-queries-desktop { /* RESPONSIVE*/
         padding-left: 5%; 
     }
     
@@ -545,25 +546,25 @@ main {
         width: 40px;
         margin: 2px 0 15px 0;
     }
-    @media screen and (min-width: 1024px) { /* RESPONSIVE*/
+    @include media-queries-desktop { /* RESPONSIVE*/
         width: 30%;
     }
-    @media screen and (min-width:768px) and (max-width:1023px) {
+    @include media-queries-tablet {
        width: 80%;
     }
 }
 
 .menu__card__1 {
-    animation: slide-up-page 1500ms ease-in-out forwards 
+    animation: slide-up-page 1000ms ease-in-out forwards 
 }
 .menu__card__2 {
-    animation: slide-up-page 3000ms ease-in-out forwards running 
+    animation: slide-up-page 1500ms ease-in-out forwards running 
 }
 .menu__card__3 {
-    animation: slide-up-page 4500ms ease-in-out forwards running 
+    animation: slide-up-page 2000ms ease-in-out forwards running 
 }
 .menu__card__4 {
-    animation: slide-up-page 6000ms ease-in-out forwards running 
+    animation: slide-up-page 2500ms ease-in-out forwards running 
 }
 
 @keyframes slide-up-page {
