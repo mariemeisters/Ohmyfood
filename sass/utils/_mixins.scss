@@ -66,8 +66,9 @@
   color: white;
   font-size: 15px;
   font-weight: 400;
+  cursor: pointer;
       &:hover {
-      box-shadow: 0px 8px 8px #a3a3a3;
+      box-shadow: 0 5px 8px #a3a3a3;
       opacity: 0.8;
     }
 }
