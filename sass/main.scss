@@ -302,7 +302,7 @@ main {
     .restaurant__cardfoot__txt {
         >h3 {
             font-size: larger;
-            margin: 0 0 3px 0;
+            margin: 0 0 4px 0;
             @include typography-card-title;
         }
         >p { 
@@ -316,52 +316,50 @@ main {
 .restaurant__buttonfav {
     display: flex;
     float: right;
-    padding: 20px 0 20px 10px;  /*Attention, si changement padding, changement bottom / position relative*/
     position: relative;
-    bottom: 65px;
-    .restaurant__buttonfav--full {
-        opacity: 0;
-        background : -webkit-linear-gradient($primary-color, $secondary-color);
-        -webkit-background-clip : text;
-        -webkit-text-fill-color : transparent;
-        position: relative;
-        right: 30px;
-    }
-    >i {
+    bottom: 50px;
+    right: 20px;
+        >input[type="checkbox"], .restaurant__buttonfav--full { /* invisibilité des éléments*/
+            display: none;
+        }
+        >i {   
         font-size: 30px;
+        padding: 5px; /*permet un clic plus large et règle un probleme d'affichage*/
     }
-    &:hover {
-        .restaurant__buttonfav--full {
-            animation: anim-fav-full 1s forwards;
-        }
-        .restaurant__buttonfav--empty {
-            animation: anim-fav-empty 1s forwards;
-        }
-    }
+    
 }
 
-@keyframes anim-fav-full {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+.restaurant__buttonfav input[type="checkbox"]:checked ~ /*combinateur frère*/ .restaurant__buttonfav--full {
+            display: inline-block;
+            height: 25px; /* fixe le gradient qui disparait sur petit écran */
+            background: linear-gradient($primary-color 0%, $secondary-color 100%);
+            -webkit-background-clip : text; /*accroche le background au text (icone)*/
+            -webkit-text-fill-color : transparent; /* rend le coeur transparent*/
+            animation: anim-fav-full 1s forwards ease-in-out;            
 }
 
-@keyframes anim-fav-empty {
-    50% {
-        color: $primary-color;
-        transform: scale(1.2);
-        
-    }
-    100% {
-        opacity: 0;
-        transform: scale(1);
-    }
-}
+.restaurant__buttonfav input[type="checkbox"]:checked ~ /*combinateur frère*/ .restaurant__buttonfav--empty {
+            display: none; 
+            }
 
+    
+        @keyframes anim-fav-full {
+            0% {
+              opacity: 0;
+              transform: scale(0);
+            }
 
+            75% {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+
+            100% {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+         
 #footer {
     background-color: #353535;
     padding: 20px 0 25px 25px;
@@ -476,32 +474,41 @@ main {
 .menu__buttonfav {
     display: flex;
     float: right;
-    height: 28px;
     position: relative;
-    top: 8px;
-    @media screen and (min-width: 1024px) { /* RESPONSIVE*/
-        padding-left:40px;   
-    }
-    >.menu__fav--full {
-        opacity: 0;
-        background : -webkit-linear-gradient($primary-color, $secondary-color);
-        -webkit-background-clip : text;
-        -webkit-text-fill-color : transparent;
-        position: relative;
-        right: 24px;
-    }
-    >i {
-        font-size: 24px;
-         }
-    &:hover {
-        .menu__fav--full {
-            animation: anim-fav-full 1s forwards;
+    right: 2%;
+        >input[type="checkbox"], .menu__buttonfav--full { /* invisibilité des éléments*/
+            display: none;
         }
-        .menu__fav--empty {
-            animation: anim-fav-empty 1s forwards;
-        }
+        >i {   
+        font-size: 30px;
+        padding: 5px; /*permet un clic plus large et règle un probleme d'affichage*/
     }
+    
 }
+
+.menu__buttonfav input[type="checkbox"]:checked ~ /*combinateur frère*/ .menu__buttonfav--full {
+            display: inline-block;
+            
+            height: 25px; /* fixe le gradient qui disparait sur petit écran */
+            background: linear-gradient($primary-color 0%, $secondary-color 100%);
+            -webkit-background-clip : text; /*accroche le background au text (icone)*/
+            -webkit-text-fill-color : transparent; /* rend le coeur transparent*/
+            animation: anim-fav-full 1s forwards ease-in-out;            
+}
+
+.menu__buttonfav input[type="checkbox"]:checked ~ /*combinateur frère*/ .menu__buttonfav--empty {
+            display: none; 
+            }
+
+
+
+
+
+
+
+
+
+
 
 .menu__category {
     display: flex;
