@@ -164,13 +164,6 @@ main {
 #functioning {
     height: 380px;
     margin: 20px;
-    @media screen and (min-width: 1024px) { /* RESPONSIVE*/
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
     @media screen and (min-width:768px) and (max-width:1023px) {
         display: flex;
         flex-direction: column;
@@ -178,7 +171,14 @@ main {
         justify-content: center;
         margin-bottom: 20px;
     }
-    >h2 {
+    @media screen and (min-width: 1024px) { /* RESPONSIVE*/
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+       >h2 {
         margin: 50px 0 30px 0;
         width: 90%;
         @media screen and (min-width:768px) and (max-width:1023px) {
@@ -499,16 +499,6 @@ main {
 .menu__buttonfav input[type="checkbox"]:checked ~ /*combinateur frère*/ .menu__buttonfav--empty {
             display: none; 
             }
-
-
-
-
-
-
-
-
-
-
 
 .menu__category {
     display: flex;
