@@ -756,7 +756,7 @@ main {
   display: none;
 }
 .restaurant__buttonfav > i {
-  font-size: 30px;
+  font-size: 28px;
   padding: 15px; /*permet un clic plus large et règle un probleme d'affichage*/
 }
 
@@ -770,6 +770,7 @@ main {
 }
 
 .restaurant__buttonfav input[type=checkbox]:checked ~ .restaurant__buttonfav--empty {
+  display: inline-block;
   position: absolute;
   animation: anim-fav-empty 1.2s forwards;
 }
@@ -779,22 +780,25 @@ main {
     opacity: 0;
     transform: scale(0);
   }
-  75% {
+  50% {
     opacity: 1;
-    transform: scale(1.3);
+    transform: scale(1.2);
   }
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1.1);
   }
 }
 @keyframes anim-fav-empty {
-  50% {
-    opacity: 1;
-    transform: scale(1);
+  0% {
+    opacity: 0;
   }
   60% {
-    opacity: 0.7;
+    opacity: 0;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 1;
     transform: scale(1.1);
   }
   100% {
@@ -935,7 +939,7 @@ main {
   display: none;
 }
 .menu__buttonfav > i {
-  font-size: 30px;
+  font-size: 28px;
   padding: 5px; /*permet un clic plus large et règle un probleme d'affichage*/
 }
 @media screen and (min-width: 1024px) {
@@ -955,7 +959,7 @@ main {
 
 .menu__buttonfav input[type=checkbox]:checked ~ .menu__buttonfav--empty {
   position: absolute;
-  animation: anim-fav-empty 1.5s forwards;
+  animation: anim-fav-empty 1.2s forwards;
 }
 
 .menu__category {
