@@ -164,13 +164,14 @@ main {
 #functioning {
     height: 380px;
     margin: 20px;
-    @media screen and (min-width:768px) and (max-width:1023px) {
+     @media screen and (min-width:768px) and (max-width:1023px) {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         margin-bottom: 20px;
     }
+    
     @media screen and (min-width: 1024px) { /* RESPONSIVE*/
         height: 200px;
         display: flex;
@@ -482,6 +483,9 @@ main {
         >i {   
         font-size: 30px;
         padding: 5px; /*permet un clic plus large et règle un probleme d'affichage*/
+    }
+    @media screen and (min-width: 1024px) { /* RESPONSIVE*/
+        padding-left: 5%; 
     }
     
 }

@@ -607,6 +607,11 @@ main {
   font-size: 30px;
   padding: 5px; /*permet un clic plus large et règle un probleme d'affichage*/
 }
+@media screen and (min-width: 1024px) {
+  .menu__buttonfav { /* RESPONSIVE*/
+    padding-left: 5%;
+  }
+}
 
 .menu__buttonfav input[type=checkbox]:checked ~ .menu__buttonfav--full {
   display: inline-block;
