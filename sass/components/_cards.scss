@@ -74,6 +74,7 @@
     justify-content: space-between;
     align-items: center;
     overflow: hidden; /*fixe la bordure pour qu'elle reste arrondie malgré le dépassement du contenu*/
+    opacity: 0;
         .menu__txt {
         margin: 0 0 0 12px;
         display: flex;

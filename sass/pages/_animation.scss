@@ -1,15 +1,15 @@
 /* Animation après le chargement de la page */
 .menu__card__1 {
-    animation: slide-up-page 1500ms ease-in-out forwards; 
+    animation: slide-up-page 1s 1000ms ease-in-out forwards; 
 }
 .menu__card__2 {
-    animation: slide-up-page 2000ms ease-in-out forwards;  
+    animation: slide-up-page 1s 1500ms ease-in-out forwards;  
 }
 .menu__card__3 {
-    animation: slide-up-page 2500ms ease-in-out forwards;
+    animation: slide-up-page 1s 2000ms ease-in-out forwards;
 }
 .menu__card__4 {
-    animation: slide-up-page 3000ms ease-in-out forwards;
+    animation: slide-up-page 1s 2500ms ease-in-out forwards;
 }
 
 @keyframes slide-up-page {
