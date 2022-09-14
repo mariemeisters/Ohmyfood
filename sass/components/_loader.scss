@@ -1,0 +1,66 @@
+#container__loader {
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    background: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: loading-container-animation 4s forwards;
+    pointer-events: none; /*retire toute interaction au clique*/
+    .dot {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0;     
+    }
+    .dot1 {
+        background : -webkit-linear-gradient(10deg,$secondary-color,$primary-color);
+        animation: loading-dot-animation 1.5s infinite;
+    }
+    .dot2 {
+        background : -webkit-linear-gradient(10deg,$secondary-color,$primary-color);
+        margin: 0 10px 0 10px;
+        animation: loading-dot-animation 1.5s infinite;
+        animation-delay: 250ms;
+    }
+    .dot3 {
+        background : -webkit-linear-gradient(10deg,$secondary-color,$primary-color);
+        animation: loading-dot-animation 1.5s infinite;
+        animation-delay: 500ms;
+    }
+}
+
+
+
+@keyframes loading-dot-animation {
+    0% {
+        opacity: 0;
+        transform: scale(0.2) translate(0px, 50px) ;
+    }
+    25% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+@keyframes loading-container-animation {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}

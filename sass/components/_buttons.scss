@@ -1,0 +1,8 @@
+#explorer__btn {
+    @include btn-theme
+}
+
+#explorer__btn:hover {
+    box-shadow: 0px 8px 8px #a3a3a3;
+    opacity: 0.8; 
+}

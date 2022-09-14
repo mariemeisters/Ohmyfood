@@ -1,0 +1,104 @@
+/* Page principales */
+
+#restaurant .restaurant__card {
+    width: 90%;
+    height: 250px;
+    background-color: white;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 5px 10px #d1d1d1;
+    position: relative;
+    @include media-queries-tablet {
+        max-width: 70%;
+        margin-bottom: 35px;
+    }
+    @include media-queries-desktop {
+        width: 35%;
+        margin: 30px;
+        height: 350px;
+    }
+    .restaurant__new { /*Position absolute par rapport à <a> */
+        display: inline-block;
+        background-color: $tetiary-color;
+        font-weight: 500;
+        color: #008766;
+        padding:7px 15px 7px 15px;
+        border-radius: 4px;
+        position:absolute;
+        z-index: 1;
+        right: 15px;
+        bottom: 200px;
+        @include media-queries-desktop {
+            bottom:300px;  /*position absolute*/
+        }
+    }
+    .restaurant__img {
+        width: 100%;
+        height: 70%;
+        object-fit: cover;
+        border-radius: 20px 20px 0px 0px;
+        @include media-queries-desktop {
+            height: 80%;
+        }
+        }
+    .restaurant__cardfoot {
+        margin: 0 20px 0px 10px;
+        height: 65px;
+        display: flex;
+        align-items: center;
+        .restaurant__cardfoot__txt {
+            >h3 {
+                font-size: larger;
+                margin: 0 0 4px 0;
+                @include typography-card-title;
+            }
+            >p { 
+                font-size: 18px;
+                margin: 0 0 0 0;
+                @include typography-card-details;
+            }
+        }
+    }
+}
+
+/* Pages annexes */
+
+.menu__card__1, .menu__card__2, .menu__card__3, .menu__card__4 {
+    width: 100%;
+    height: 65px;
+    background-color: white;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0px 5px 10px #d1d1d1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden; /*fixe la bordure pour qu'elle reste arrondie malgré le dépassement du contenu*/
+        .menu__txt {
+        margin: 0 0 0 12px;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        white-space: nowrap; /*empêche le passage à la ligne en cas de débordement*/
+        overflow: hidden; /* cache ce qui déborde de toute la box*/
+        >h3 {
+            @include typography-card-title;
+            margin-bottom: 3px;
+            overflow: hidden; /*cache le débordement*/
+            text-overflow: ellipsis; /*ajoute ... au contenu caché*/
+        }
+        >p {
+            @include typography-card-details; 
+            font-size: 15px;
+            overflow: hidden; /*cache le débordement*/
+            text-overflow: ellipsis; /*ajoute ... au contenu caché*/
+        }
+    }
+    .menu__price {
+        font-weight: 800;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        padding: 0 20px 20px 20px;
+    }   
+}

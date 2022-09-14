@@ -1,0 +1,23 @@
+#localisation {
+    background-color: #eaeaea;
+    border: 0px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        .localisation__icon {
+        padding: 0px 15px 0px 15px;
+        }
+        >input {
+            border:none;
+            outline: none;
+            background-color: #eaeaea;
+            font-weight: 700;
+            font-size: 16px;
+            width: 140px;
+            }
+            ::placeholder {
+                color: #000000;
+                opacity: 1; /* regle le prob de Firefox qui ajoute un opacité plus bas au placeholder*/
+            }
+}

@@ -1,0 +1,66 @@
+/* Animation après le chargement de la page */
+.menu__card__1 {
+    animation: slide-up-page 1500ms ease-in-out forwards; 
+}
+.menu__card__2 {
+    animation: slide-up-page 2000ms ease-in-out forwards;  
+}
+.menu__card__3 {
+    animation: slide-up-page 2500ms ease-in-out forwards;
+}
+.menu__card__4 {
+    animation: slide-up-page 3000ms ease-in-out forwards;
+}
+
+@keyframes slide-up-page {
+    from {
+        opacity: 0;
+        margin-top: 15px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+/* Animation dans les cartes - bloc vert latéral */
+.menu__card__1, .menu__card__2, .menu__card__3, .menu__card__4 {
+    >.menu__choice {
+        background-color: $tetiary-color;
+        color: white;
+        font-size: larger;
+        font-weight: 900;
+        height: 100%;
+        width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: -60px;
+    }
+}
+
+.menu__card__1:hover .menu__choice, .menu__card__2:hover .menu__choice, .menu__card__3:hover .menu__choice, .menu__card__4:hover .menu__choice { /*Animation checkbox*/
+    animation: menu__checkbox 1s ease forwards;
+}
+
+@keyframes menu__checkbox {
+    from {
+        margin-right: -60px;
+    }
+    to {
+        margin-right: 0px;
+    }
+}
+
+.menu__card__1:hover .card__icon__check, .menu__card__2:hover .card__icon__check, .menu__card__3:hover .card__icon__check, .menu__card__4:hover .card__icon__check {
+    animation: menu-icon-rotate 1s ease forwards;
+}
+
+@keyframes menu-icon-rotate {
+    from {
+        transform: rotateZ(0deg)
+    }
+    to {
+        transform: rotateZ(360deg)
+    }
+}

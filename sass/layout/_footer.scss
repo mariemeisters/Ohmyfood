@@ -1,0 +1,42 @@
+#footer {
+    background-color: #353535;
+    padding: 20px 0 25px 25px;
+    
+    .footer__title {
+        padding: 0 0 15px 0px;
+        font-family: "Shrikhand", Arial, Helvetica, sans-serif;
+        font-weight: 200;
+        font-size: 18px;
+        color: white;
+    }
+}
+
+.footer__contents {
+    padding: 0 0 0px 0;
+    display: flex;
+    flex-direction: column;
+    .footer__element {
+        padding-bottom: 8px;
+        font-size: 15px;
+        font-weight: 300;
+        :nth-child(n) {
+            color: white;
+        }   
+    }
+    .footer__element__bold {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        >i { 
+            width: 25px;
+        }
+        >p {
+            font-weight: 500;
+            font-size: 15px;
+        }
+    }
+    .footer__icon__rotate {
+        transform : rotate(-15deg);
+        font-size: 12px;
+    } 
+}
