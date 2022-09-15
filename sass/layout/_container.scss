@@ -182,15 +182,18 @@
     display: flex;
     flex-direction: column;
     margin: 20px;
-    >h2 {
+    h2 {
         font-size: 16px;
         font-weight: 400;
-    }
-    >.menu__border {
-        background-color: $tetiary-color;
-        height: 3px;
-        width: 40px;
-        margin: 2px 0 15px 0;
+        display: inline-block;
+        &::after {
+            content: "";
+            display: flex;
+            background-color: $tetiary-color;
+            height: 3px;
+            width: 40px;
+            margin: 2px 0 15px 0;
+        }
     }
     @include media-queries-desktop { /* RESPONSIVE*/
         width: 30%;

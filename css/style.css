@@ -503,6 +503,7 @@ main {
   align-items: center;
   overflow: hidden; /*fixe la bordure pour qu'elle reste arrondie malgré le dépassement du contenu*/
   opacity: 0;
+  cursor: pointer;
 }
 .menu__card__1 .menu__txt, .menu__card__2 .menu__txt, .menu__card__3 .menu__txt, .menu__card__4 .menu__txt {
   margin: 0 0 0 12px;
@@ -934,11 +935,14 @@ main {
   flex-direction: column;
   margin: 20px;
 }
-.menu__category > h2 {
+.menu__category h2 {
   font-size: 16px;
   font-weight: 400;
+  display: inline-block;
 }
-.menu__category > .menu__border {
+.menu__category h2::after {
+  content: "";
+  display: flex;
   background-color: #99E2D0;
   height: 3px;
   width: 40px;
