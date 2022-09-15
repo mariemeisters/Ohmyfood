@@ -362,7 +362,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: loading-container-animation 4s forwards;
+  animation: loading-container-animation 3s forwards;
   pointer-events: none; /*retire toute interaction au clique*/
 }
 #container__loader .dot {
