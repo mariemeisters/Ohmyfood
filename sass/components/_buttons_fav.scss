@@ -15,36 +15,6 @@
     }
 }
 
-.restaurant__buttonfav input[type="checkbox"]:checked ~ /*combinateur frère*/ .restaurant__buttonfav--full {
-            display: inline-block; 
-            height: 25px; /* fixe le gradient qui disparait sur petit écran */
-            background: linear-gradient($primary-color 0%, $secondary-color 100%);
-            -webkit-background-clip : text; /*accroche le background au text (icone)*/
-            -webkit-text-fill-color : transparent; /* rend le coeur transparent*/
-            animation: anim-fav-full 1s forwards ease-in-out;      
-}   
-
-.restaurant__buttonfav input[type="checkbox"]:checked ~ /*combinateur frère*/ .restaurant__buttonfav--empty {
-            display: inline-block;         
-            position:absolute;
-            animation: anim-fav-empty 1.2s forwards;
-            }
-
-@keyframes anim-fav-full {
-    0% {
-        opacity: 0;
-        transform: scale(0);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.2);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1.1);
-    }
-}
-
 @keyframes anim-fav-empty {
     0% {
         opacity: 0;
@@ -65,6 +35,38 @@
         -webkit-text-fill-color : transparent; /* rend le coeur transparent*/
     }
 }
+
+.restaurant__buttonfav input[type="checkbox"]:checked ~ /*combinateur frère*/ .restaurant__buttonfav--empty {
+    display: inline-block;         
+    position:absolute;
+    animation: anim-fav-empty 1.2s forwards;
+}
+
+@keyframes anim-fav-full {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+.restaurant__buttonfav input[type="checkbox"]:checked ~ /*combinateur frère*/ .restaurant__buttonfav--full {
+            display: inline-block; 
+            height: 25px; /* fixe le gradient qui disparait sur petit écran */
+            background: linear-gradient($primary-color 0%, $secondary-color 100%);
+            -webkit-background-clip : text; /*accroche le background au text (icone)*/
+            -webkit-text-fill-color : transparent; /* rend le coeur transparent*/
+            animation: anim-fav-full 1s forwards ease-in-out;      
+}   
+
+
 
 /* Fav - Pages annexes */
 
@@ -93,7 +95,7 @@
             background: linear-gradient($primary-color 0%, $secondary-color 100%);
             -webkit-background-clip : text; /*accroche le background au text (icone)*/
             -webkit-text-fill-color : transparent; /* rend le coeur transparent*/
-            animation: anim-fav-full 1s forwards ease-in-out;            
+            animation: anim-fav-full 1s forwards;            
 }
 
 .menu__buttonfav input[type="checkbox"]:checked ~ /*combinateur frère*/ .menu__buttonfav--empty {

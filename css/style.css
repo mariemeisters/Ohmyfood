@@ -328,7 +328,7 @@ main {
   margin-top: 60px;
 }
 
-#explorer__btn {
+#explorer__btn, .container__btn__order .btn__order {
   padding: 16px;
   width: auto;
   min-width: 180px;
@@ -336,20 +336,14 @@ main {
   border-radius: 32px;
   box-shadow: 0px 5px 10px #d1d1d1;
   background: -webkit-linear-gradient(280deg, #FF79DA, #9356DC);
-  font-family: "roboto", Arial, Helvetica, sans-serif;
   color: white;
   font-size: 15px;
   font-weight: 400;
   cursor: pointer;
 }
-#explorer__btn:hover {
-  box-shadow: 0 5px 8px #a3a3a3;
-  opacity: 0.8;
-}
-
-#explorer__btn:hover {
-  box-shadow: 0px 8px 8px #a3a3a3;
-  opacity: 0.8;
+#explorer__btn:hover, .container__btn__order .btn__order:hover {
+  box-shadow: 0 5px 8px #7e7e7e;
+  filter: brightness(1.1);
 }
 
 #container__loader {
@@ -371,21 +365,17 @@ main {
   border-radius: 50%;
   display: inline-block;
   opacity: 0;
+  background: -webkit-linear-gradient(10deg, #FF79DA, #9356DC);
 }
 #container__loader .dot1 {
-  background: -webkit-linear-gradient(10deg, #FF79DA, #9356DC);
   animation: loading-dot-animation 1.5s infinite;
 }
 #container__loader .dot2 {
-  background: -webkit-linear-gradient(10deg, #FF79DA, #9356DC);
   margin: 0 10px 0 10px;
-  animation: loading-dot-animation 1.5s infinite;
-  animation-delay: 250ms;
+  animation: loading-dot-animation 1.5s 250ms infinite;
 }
 #container__loader .dot3 {
-  background: -webkit-linear-gradient(10deg, #FF79DA, #9356DC);
-  animation: loading-dot-animation 1.5s infinite;
-  animation-delay: 500ms;
+  animation: loading-dot-animation 1.5s 500ms infinite;
 }
 
 @keyframes loading-dot-animation {
@@ -405,15 +395,11 @@ main {
   }
 }
 @keyframes loading-container-animation {
-  0% {
-    opacity: 1;
-  }
   90% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    display: none;
   }
 }
 /* Page principales */
@@ -439,7 +425,7 @@ main {
     height: 350px;
   }
 }
-#restaurant .restaurant__card .restaurant__new { /*Position absolute par rapport à <a> */
+#restaurant .restaurant__card .restaurant__new { /*Position absolute par rapport à la carte */
   display: inline-block;
   background-color: #99E2D0;
   font-weight: 500;
@@ -501,7 +487,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  overflow: hidden; /*fixe la bordure pour qu'elle reste arrondie malgré le dépassement du contenu*/
+  overflow: hidden; /*dépassement du contenu masqué (box verte)*/
   opacity: 0;
   cursor: pointer;
 }
@@ -556,35 +542,6 @@ main {
   padding: 15px; /*permet un clic plus large et règle un probleme d'affichage*/
 }
 
-.restaurant__buttonfav input[type=checkbox]:checked ~ .restaurant__buttonfav--full {
-  display: inline-block;
-  height: 25px; /* fixe le gradient qui disparait sur petit écran */
-  background: linear-gradient(#9356DC 0%, #FF79DA 100%);
-  -webkit-background-clip: text; /*accroche le background au text (icone)*/
-  -webkit-text-fill-color: transparent; /* rend le coeur transparent*/
-  animation: anim-fav-full 1s forwards ease-in-out;
-}
-
-.restaurant__buttonfav input[type=checkbox]:checked ~ .restaurant__buttonfav--empty {
-  display: inline-block;
-  position: absolute;
-  animation: anim-fav-empty 1.2s forwards;
-}
-
-@keyframes anim-fav-full {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-}
 @keyframes anim-fav-empty {
   0% {
     opacity: 0;
@@ -605,6 +562,35 @@ main {
     -webkit-text-fill-color: transparent; /* rend le coeur transparent*/
   }
 }
+.restaurant__buttonfav input[type=checkbox]:checked ~ .restaurant__buttonfav--empty {
+  display: inline-block;
+  position: absolute;
+  animation: anim-fav-empty 1.2s forwards;
+}
+
+@keyframes anim-fav-full {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+.restaurant__buttonfav input[type=checkbox]:checked ~ .restaurant__buttonfav--full {
+  display: inline-block;
+  height: 25px; /* fixe le gradient qui disparait sur petit écran */
+  background: linear-gradient(#9356DC 0%, #FF79DA 100%);
+  -webkit-background-clip: text; /*accroche le background au text (icone)*/
+  -webkit-text-fill-color: transparent; /* rend le coeur transparent*/
+  animation: anim-fav-full 1s forwards ease-in-out;
+}
+
 /* Fav - Pages annexes */
 .menu__buttonfav {
   position: relative;
@@ -633,7 +619,7 @@ main {
   background: linear-gradient(#9356DC 0%, #FF79DA 100%);
   -webkit-background-clip: text; /*accroche le background au text (icone)*/
   -webkit-text-fill-color: transparent; /* rend le coeur transparent*/
-  animation: anim-fav-full 1s forwards ease-in-out;
+  animation: anim-fav-full 1s forwards;
 }
 
 .menu__buttonfav input[type=checkbox]:checked ~ .menu__buttonfav--empty {
@@ -965,24 +951,6 @@ main {
   padding-bottom: 70px;
   background-color: #f6f6f6;
 }
-.container__btn__order .btn__order {
-  padding: 16px;
-  width: auto;
-  min-width: 180px;
-  border: none;
-  border-radius: 32px;
-  box-shadow: 0px 5px 10px #d1d1d1;
-  background: -webkit-linear-gradient(280deg, #FF79DA, #9356DC);
-  font-family: "roboto", Arial, Helvetica, sans-serif;
-  color: white;
-  font-size: 15px;
-  font-weight: 400;
-  cursor: pointer;
-}
-.container__btn__order .btn__order:hover {
-  box-shadow: 0 5px 8px #a3a3a3;
-  opacity: 0.8;
-}
 
 header { /*Header page principale*/
   display: flex;
@@ -1086,29 +1054,28 @@ header #header__logo {
 
 /* Animation après le chargement de la page */
 .menu__card__1 {
-  animation: slide-up-page 1s 1000ms ease-in-out forwards;
+  animation: slide-up-page 1s 1000ms ease-out forwards;
 }
 
 .menu__card__2 {
-  animation: slide-up-page 1s 1500ms ease-in-out forwards;
+  animation: slide-up-page 1s 1500ms ease-out forwards;
 }
 
 .menu__card__3 {
-  animation: slide-up-page 1s 2000ms ease-in-out forwards;
+  animation: slide-up-page 1s 2000ms ease-out forwards;
 }
 
 .menu__card__4 {
-  animation: slide-up-page 1s 2500ms ease-in-out forwards;
+  animation: slide-up-page 1s 2500ms ease-out forwards;
 }
 
 @keyframes slide-up-page {
   from {
     opacity: 0;
-    margin-top: 15px;
+    transform: translate(0px, 50px);
   }
   to {
     opacity: 1;
-    margin-top: 0;
   }
 }
 /* Animation dans les cartes - bloc vert latéral */
@@ -1123,22 +1090,16 @@ header #header__logo {
   justify-content: center;
   align-items: center;
   margin-right: -60px;
+  transition: margin 0.8s 0s ease-in-out; /* property - delay - duration - timing function */
 }
 
-.menu__card__1:hover .menu__choice, .menu__card__2:hover .menu__choice, .menu__card__3:hover .menu__choice, .menu__card__4:hover .menu__choice { /*Animation checkbox*/
-  animation: menu__checkbox 1s ease forwards;
+.menu__card__1:hover, .menu__card__2:hover, .menu__card__3:hover, .menu__card__4:hover { /*Animation checkbox*/ }
+.menu__card__1:hover .menu__choice, .menu__card__2:hover .menu__choice, .menu__card__3:hover .menu__choice, .menu__card__4:hover .menu__choice {
+  margin-right: 0px;
 }
 
-@keyframes menu__checkbox {
-  from {
-    margin-right: -60px;
-  }
-  to {
-    margin-right: 0px;
-  }
-}
 .menu__card__1:hover .card__icon__check, .menu__card__2:hover .card__icon__check, .menu__card__3:hover .card__icon__check, .menu__card__4:hover .card__icon__check {
-  animation: menu-icon-rotate 1s ease forwards;
+  animation: menu-icon-rotate 1.5s 0.2s forwards;
 }
 
 @keyframes menu-icon-rotate {

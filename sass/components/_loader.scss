@@ -15,22 +15,18 @@
         height: 30px;
         border-radius: 50%;
         display: inline-block;
-        opacity: 0;     
+        opacity: 0; 
+        background : -webkit-linear-gradient(10deg,$secondary-color,$primary-color);    
     }
     .dot1 {
-        background : -webkit-linear-gradient(10deg,$secondary-color,$primary-color);
         animation: loading-dot-animation 1.5s infinite;
     }
     .dot2 {
-        background : -webkit-linear-gradient(10deg,$secondary-color,$primary-color);
         margin: 0 10px 0 10px;
-        animation: loading-dot-animation 1.5s infinite;
-        animation-delay: 250ms;
+        animation: loading-dot-animation 1.5s 250ms infinite;
     }
     .dot3 {
-        background : -webkit-linear-gradient(10deg,$secondary-color,$primary-color);
-        animation: loading-dot-animation 1.5s infinite;
-        animation-delay: 500ms;
+        animation: loading-dot-animation 1.5s 500ms infinite;
     }
 }
 
@@ -53,14 +49,10 @@
     }
 }
 @keyframes loading-container-animation {
-    0% {
-        opacity: 1;
-    }
     90% {
         opacity: 1;
     }
     100% {
         opacity: 0;
-        display: none;
     }
 }

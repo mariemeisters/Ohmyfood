@@ -17,7 +17,7 @@
         margin: 30px;
         height: 350px;
     }
-    .restaurant__new { /*Position absolute par rapport à <a> */
+    .restaurant__new { /*Position absolute par rapport à la carte */
         display: inline-block;
         background-color: $tetiary-color;
         font-weight: 500;
@@ -73,7 +73,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    overflow: hidden; /*fixe la bordure pour qu'elle reste arrondie malgré le dépassement du contenu*/
+    overflow: hidden; /*dépassement du contenu masqué (box verte)*/
     opacity: 0;
     cursor: pointer;
         .menu__txt {

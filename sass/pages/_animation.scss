@@ -1,25 +1,24 @@
 /* Animation après le chargement de la page */
 .menu__card__1 {
-    animation: slide-up-page 1s 1000ms ease-in-out forwards; 
+    animation: slide-up-page 1s 1000ms ease-out forwards; 
 }
 .menu__card__2 {
-    animation: slide-up-page 1s 1500ms ease-in-out forwards;  
+    animation: slide-up-page 1s 1500ms ease-out forwards;  
 }
 .menu__card__3 {
-    animation: slide-up-page 1s 2000ms ease-in-out forwards;
+    animation: slide-up-page 1s 2000ms ease-out forwards;
 }
 .menu__card__4 {
-    animation: slide-up-page 1s 2500ms ease-in-out forwards;
+    animation: slide-up-page 1s 2500ms ease-out forwards;
 }
 
 @keyframes slide-up-page {
     from {
         opacity: 0;
-        margin-top: 15px;
+        transform: translate(0px, 50px);
     }
     to {
         opacity: 1;
-        margin-top: 0;
     }
 }
 
@@ -36,24 +35,20 @@
         justify-content: center;
         align-items: center;
         margin-right: -60px;
+        transition : margin 0.8s 0s ease-in-out;/* property - delay - duration - timing function */
     }
 }
 
-.menu__card__1:hover .menu__choice, .menu__card__2:hover .menu__choice, .menu__card__3:hover .menu__choice, .menu__card__4:hover .menu__choice { /*Animation checkbox*/
-    animation: menu__checkbox 1s ease forwards;
-}
-
-@keyframes menu__checkbox {
-    from {
-        margin-right: -60px;
-    }
-    to {
+.menu__card__1:hover, .menu__card__2:hover, .menu__card__3:hover, .menu__card__4:hover { /*Animation checkbox*/
+    .menu__choice {
         margin-right: 0px;
     }
 }
 
-.menu__card__1:hover .card__icon__check, .menu__card__2:hover .card__icon__check, .menu__card__3:hover .card__icon__check, .menu__card__4:hover .card__icon__check {
-    animation: menu-icon-rotate 1s ease forwards;
+.menu__card__1:hover, .menu__card__2:hover, .menu__card__3:hover, .menu__card__4:hover {
+    .card__icon__check {
+        animation: menu-icon-rotate 1.5s 0.2s forwards;
+    }
 }
 
 @keyframes menu-icon-rotate {
