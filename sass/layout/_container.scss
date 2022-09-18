@@ -160,7 +160,7 @@
     border-top-right-radius: 30px;
     display: flex;
     justify-content: space-between;
-    padding: 30px 20px 10px 20px;
+    padding: 15px 20px 10px 20px;
     @include media-queries-desktop { /* RESPONSIVE*/
         justify-content:center;   
     }
@@ -171,8 +171,8 @@
     
     >h1 {
         font-family: "Shrikhand", Arial, Helvetica, sans-serif;
-        font-weight: 200;
-        font-size: 26px;
+        font-weight: 500;
+        font-size: 28px;
     }
 }
 
